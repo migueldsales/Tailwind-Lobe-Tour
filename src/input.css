@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+    @apply max-w-[140rem] p-[1.5rem] mx-auto;
+}
+
+@layer components{
+    .header{
+        @apply relative bg-light;
+    }
+    .header-wrapper{
+        @apply flex items-center justify-between;
+    }
+    .header-nav{
+        @apply hidden lg:flex;
+    }
+    .header-nav ul{
+        @apply lg:flex gap-[4rem] justify-between;
+    }
+    .header-nav ul li a {
+        @apply lg:text-[1.1rem] font-semibold text-gray-400;;
+    }
+
+    .toggle-menu{
+        @apply bg-grey rounded-full px-[.8rem] py-[1rem] cursor-pointer lg:hidden;
+    }
+
+    .toggle-menu span{
+        @apply w-[1.5rem] h-[.15rem] bg-dark block rounded-full transition-all duration-300 ease-in;
+    }
+    .toggle-menu span:nth-child(2){
+        @apply my-[.3rem];
+    }
+    .toggle-menu.open span:first-child{
+        @apply translate-x-0 translate-y-[6px] rotate-[-225deg] transition-all duration-300 ease-in-out;
+    }
+    .toggle-menu.open span:nth-child(2){
+        @apply opacity-0 transition-all duration-200 ease-in-out;
+    }
+    .toggle-menu.open span:last-child{
+        @apply translate-x-0 translate-y-[-8px] rotate-[225deg] transition-all duration-300 ease-in-out;
+    }
+
+    .header-actions{
+        @apply absolute bg-light top-[6.05rem] left-0 w-full max-h-0 overflow-hidden transition-all duration-700 ease-in-out 
+            lg:relative lg:overflow-visible lg:w-fit lg:top-[-2.3rem];  
+    }
+    .header-actions.open {
+        @apply max-h-[50rem] transition-all duration-700 ease-in-out;
+    }
+    .header-actions ul li{
+        @apply pt-[1.5rem] px-[1.5rem] lg:hidden;
+    }
+    .header-actions ul li:first-child{
+        @apply border-t-[1px] border-grey;
+    }
+    .header-actions ul li a{
+        @apply text-[1.5rem] font-semibold text-gray-400;
+    }
+    .header-download {
+        @apply mx-[1.5rem] my-[3rem] lg:my-3 ;
+    }
+    .header-download a{
+        @apply inline-block px-[1rem] py-[.5rem] bg-primary w-full rounded-full text-center text-light text-[1.5rem] font-semibold hover:scale-[1.05] transition-all lg:text-[1.2rem] font-bold;
+    }
+
+
+
+    .banner-content{
+        @apply align-middle justify-center;
+    }
+    .main-text{
+        @apply flex font-bold text-[2.5rem] justify-center;
+    }
+
+    .main-text h1{
+        @apply text-dark lg:text-[5rem] mr-[1rem];
+    }
+    .main-text h2{
+        @apply text-center text-primary lg:text-[5rem];
+    }
+    .banner-heading p{
+        @apply text-[1rem] font-normal text-center text-gray-500 w-[24rem] mx-auto lg:text-[2rem] lg:text-dark lg:w-[45rem];
+    }
+
+    .banner-video{
+        @apply mt-[4rem];
+    }
+
+    .banner-video img{
+        @apply rounded-3xl hover:scale-105 transition-all duration-300 ease-in-out lg:h-[40rem] mx-auto lg:hover:scale-105;
+    }
+
+    .app .container{
+        @apply border-b-[1px] border-grey;
+    }
+
+    .app-content h1{
+        @apply my-[5rem] text-[2.5rem] font-bold text-dark text-center w-[20rem] mx-auto leading-none lg:text-[5rem] lg:w-[40rem]; 
+        
+    }
+    .app-download{
+        @apply mx-auto lg:mb-[5rem] my-[2rem] flex justify-center px-[1rem] py-[.5rem] lg:py-[1rem] bg-primary rounded-full text-center text-light text-[1.2rem] font-semibold hover:scale-[1.05] transition-all w-40;
+    }
+    
+
+    .footer{
+        @apply my-[2rem];
+    }
+    .footer-wrapper{
+        @apply lg:grid lg:grid-cols-12 ;
+    }
+    .footer-content{
+        @apply grid grid-cols-2 gap-2 lg:grid-cols-5 lg:gap-0;
+    }
+
+    .footer-links{
+        @apply text-center mb-[5rem] lg:text-left;
+    }
+    
+    .footer-links ul h6{
+        @apply text-dark font-bold lg:text-[1.2rem];
+    }
+    .footer-links ul li{
+        @apply mt-[1rem]  hover:scale-105 transition-all duration-100 ease-in-out lg:text-[1.2rem] font-medium;
+    }
+    .footer-links ul li a{
+        @apply text-gray-500;
+    }
+
+    .social-media a{
+        @apply hover:scale-105 transition-all duration-100 ease-in-out;
+    }
+    .social-media i{
+        @apply block px-3 py-3 w-fit rounded-full text-light text-[1.2rem] bg-primary mx-auto my-[1rem] hover:scale-105 transition-all duration-100 ease-in-out lg:inline-flex lg:mx-[.5rem];
+    }
+
+    /* .footer-copyright {
+        @apply ;
+    } */
+    .footer-copyright img{
+        @apply mx-auto hover:scale-105 transition-all duration-100 ease-in-out;
+    }
+    .footer-copyright {
+        @apply text-center mx-auto justify-center lg:text-left leading-8 ;
+    }
+    .copyright-text p{
+        @apply text-gray-500 font-medium;
+    }
+    
+}
