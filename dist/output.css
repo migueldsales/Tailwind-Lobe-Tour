@@ -806,7 +806,7 @@ video {
   margin-right: auto;
   width: 24rem;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -838,6 +838,9 @@ video {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 @media (min-width: 1024px) {
@@ -924,9 +927,15 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .footer {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
   .footer-wrapper {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-evenly;
   }
 }
 
@@ -968,7 +977,6 @@ video {
 
 .footer-links ul li {
   margin-top: 1rem;
-  font-weight: 500;
   transition-property: all;
   transition-duration: 100ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1038,11 +1046,11 @@ video {
     margin-right: .5rem;
     display: inline-flex;
   }
-
-  .footer-copyright {
-    order: -9999;
-  }
 }
+
+/* .footer-copyright {
+        @apply ;
+    } */
 
 .footer-copyright img {
   margin-left: auto;
@@ -1058,6 +1066,13 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+@media (min-width: 1024px) {
+  .footer-copyright img {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
 .footer-copyright {
   margin-left: auto;
   margin-right: auto;
@@ -1066,14 +1081,127 @@ video {
   line-height: 2rem;
 }
 
+@media (min-width: 1024px) {
+  .footer-copyright {
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: left;
+  }
+}
+
 .copyright-text p {
-  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
+@media (min-width: 1024px) {
+  .copyright-text p {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+}
+
+.faq .container {
+  max-width: 70rem;
+}
+
+.faq-wrapper {
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .faq-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 2.5fr;
+  }
+}
+
+.faq-tab {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .faq-tab {
+    display: block;
+  }
+}
+
+.faq-question {
+  border-bottom-width: 1px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.faq-question:first-child {
+  padding-bottom: 2rem;
+}
+
+.faq-question h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq-question h4 i {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-question h4 i.open {
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.faq-tab-content-answer {
+  max-height: 0rem;
+  overflow: hidden;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.faq-tab-content-answer.open {
+  max-height: 50rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.faq-nav li {
+  max-width: 15rem;
+  padding: 1rem;
+}
+
+.faq-nav li.active {
+  border-radius: 0.75rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 221 179 / var(--tw-bg-opacity));
+}
+
+.faq-tab-content {
+  display: none;
+}
+
+.faq-tab-content.active {
+  display: block;
+}
+
+.visible {
+  visibility: visible;
+}
+
 .cursor-pointer {
   cursor: pointer;
+}
+
+.resize {
+  resize: both;
 }
 
 .container {
@@ -1082,6 +1210,65 @@ video {
   max-width: 140rem;
   padding: 1.5rem;
 }
+
+/* --------------------------LOBE HELP -------------------------------- */
+
+/* .help-banner-content{
+        @apply align-middle justify-center;
+    }
+    .help-main-text{
+        @apply flex font-bold text-[2.5rem] justify-center;
+    }
+
+    .help-main-text h1{
+        @apply text-dark lg:text-[5rem] mr-[1rem];
+    }
+    .help-main-text h2{
+        @apply text-center text-primary lg:text-[5rem];
+    }
+    .help-banner-heading p{
+        @apply text-[1.2rem] font-normal text-center text-gray-500 w-[24rem] mx-auto lg:text-[2rem] lg:text-black lg:w-[45rem];
+    }
+    .help-banner-faq {
+        @apply border-b-[1px] border-grey;
+    }
+    .help-banner-faq h4{
+        @apply pb-[3rem] pt-[2rem] cursor-pointer flex align-middle justify-between;
+    }
+    .help-banner-faq span{
+        @apply text-dark text-[1.2rem] font-bold;
+    }
+    .help-banner-faq i{
+        @apply transition-all duration-500 ease-in-out;
+    } 
+    .help-banner-faq.open i{
+        @apply transition-all duration-500 ease-in-out rotate-180 ;
+    }
+    .faq-content{
+        @apply max-h-[0rem] hidden my-[1rem] transition-all duration-500 ease-in-out;
+    }
+
+    .faq-content.open {
+        @apply block max-h-[30rem] transition-all duration-500 ease-in-out;
+    }
+    .help-banner-faq ul li{
+        @apply py-[1rem] text-[1.2rem] font-normal ;
+    }
+    .help-banner-faq ul p{
+        @apply py-[1rem] text-[1.2rem] text-dark font-medium;
+    }
+    .help-banner-faq ul p span{
+        @apply text-bold no-underline;
+    }
+    .help-banner-faq ul p a{
+        @apply underline;
+    }
+    .help-banner-faq ul li a{
+        @apply text-[1.2rem] hover:text-dark underline ;
+    }
+    .help-banner-faq ul li i{
+        @apply  mr-[.5rem] py-[.3rem] px-[.4rem] text-[.8rem] text-light rounded-full  bg-primary;
+    } */
 
 .group:hover .group-hover\:text-dark {
   --tw-text-opacity: 1;

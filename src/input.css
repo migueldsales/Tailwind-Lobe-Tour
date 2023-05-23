@@ -63,11 +63,11 @@
         @apply mx-[1.5rem] my-[3rem] lg:my-3 ;
     }
     .header-download a{
-        @apply inline-block px-[1rem] py-[.5rem] bg-primary w-full rounded-full text-center text-light text-[1.5rem] font-semibold hover:scale-[1.05] transition-all lg:text-[1.2rem] font-bold;
+        @apply inline-block px-[1rem] py-[.5rem] bg-primary w-full rounded-full text-center text-light text-[1.5rem]  hover:scale-[1.05] transition-all lg:text-[1.2rem] font-bold;
     }
+}
 
-
-
+@layer components{
     .banner-content{
         @apply align-middle justify-center;
     }
@@ -82,7 +82,7 @@
         @apply text-center text-primary lg:text-[5rem];
     }
     .banner-heading p{
-        @apply text-[1rem] font-normal text-center text-gray-500 w-[24rem] mx-auto lg:text-[2rem] lg:text-dark lg:w-[45rem];
+        @apply text-[1.2rem] font-normal text-center text-gray-500 w-[24rem] mx-auto lg:text-[2rem] lg:text-dark lg:w-[45rem];
     }
 
     .banner-video{
@@ -90,13 +90,14 @@
     }
 
     .banner-video img{
-        @apply rounded-3xl hover:scale-105 transition-all duration-300 ease-in-out lg:h-[40rem] mx-auto lg:hover:scale-105;
+        @apply rounded-3xl hover:scale-105 transition-all duration-300 ease-in-out lg:h-[40rem] mx-auto lg:hover:scale-105 hover:shadow-2xl;
     }
-
+}
+@layer components{
     .app .container{
         @apply border-b-[1px] border-grey;
     }
-
+    
     .app-content h1{
         @apply my-[5rem] text-[2.5rem] font-bold text-dark text-center w-[20rem] mx-auto leading-none lg:text-[5rem] lg:w-[40rem]; 
         
@@ -104,13 +105,14 @@
     .app-download{
         @apply mx-auto lg:mb-[5rem] my-[2rem] flex justify-center px-[1rem] py-[.5rem] lg:py-[1rem] bg-primary rounded-full text-center text-light text-[1.2rem] font-semibold hover:scale-[1.05] transition-all w-40;
     }
+}
     
-
+@layer components{
     .footer{
-        @apply my-[2rem];
+        @apply my-[2rem] lg:mx-[5rem];
     }
     .footer-wrapper{
-        @apply lg:grid lg:grid-cols-12 ;
+        @apply lg:flex lg:flex-row-reverse lg:justify-evenly;
     }
     .footer-content{
         @apply grid grid-cols-2 gap-2 lg:grid-cols-5 lg:gap-0;
@@ -124,7 +126,7 @@
         @apply text-dark font-bold lg:text-[1.2rem];
     }
     .footer-links ul li{
-        @apply mt-[1rem]  hover:scale-105 transition-all duration-100 ease-in-out lg:text-[1.2rem] font-medium;
+        @apply mt-[1rem]  hover:scale-105 transition-all duration-100 ease-in-out lg:text-[1.2rem];
     }
     .footer-links ul li a{
         @apply text-gray-500;
@@ -141,13 +143,117 @@
         @apply ;
     } */
     .footer-copyright img{
-        @apply mx-auto hover:scale-105 transition-all duration-100 ease-in-out;
+        @apply lg:mx-0 mx-auto hover:scale-105 transition-all duration-100 ease-in-out;
     }
     .footer-copyright {
-        @apply text-center mx-auto justify-center lg:text-left leading-8 ;
+        @apply text-center mx-auto justify-center lg:text-left leading-8 lg:mx-0 ;
     }
     .copyright-text p{
-        @apply text-gray-500 font-medium;
+        @apply text-gray-500 lg:text-[1.2rem] lg:font-normal my-[1rem];
     }
-    
+}
+
+
+     /* --------------------------LOBE HELP -------------------------------- */
+    /* .help-banner-content{
+        @apply align-middle justify-center;
+    }
+    .help-main-text{
+        @apply flex font-bold text-[2.5rem] justify-center;
+    }
+
+    .help-main-text h1{
+        @apply text-dark lg:text-[5rem] mr-[1rem];
+    }
+    .help-main-text h2{
+        @apply text-center text-primary lg:text-[5rem];
+    }
+    .help-banner-heading p{
+        @apply text-[1.2rem] font-normal text-center text-gray-500 w-[24rem] mx-auto lg:text-[2rem] lg:text-black lg:w-[45rem];
+    }
+    .help-banner-faq {
+        @apply border-b-[1px] border-grey;
+    }
+    .help-banner-faq h4{
+        @apply pb-[3rem] pt-[2rem] cursor-pointer flex align-middle justify-between;
+    }
+    .help-banner-faq span{
+        @apply text-dark text-[1.2rem] font-bold;
+    }
+    .help-banner-faq i{
+        @apply transition-all duration-500 ease-in-out;
+    } 
+    .help-banner-faq.open i{
+        @apply transition-all duration-500 ease-in-out rotate-180 ;
+    }
+    .faq-content{
+        @apply max-h-[0rem] hidden my-[1rem] transition-all duration-500 ease-in-out;
+    }
+
+    .faq-content.open {
+        @apply block max-h-[30rem] transition-all duration-500 ease-in-out;
+    }
+    .help-banner-faq ul li{
+        @apply py-[1rem] text-[1.2rem] font-normal ;
+    }
+    .help-banner-faq ul p{
+        @apply py-[1rem] text-[1.2rem] text-dark font-medium;
+    }
+    .help-banner-faq ul p span{
+        @apply text-bold no-underline;
+    }
+    .help-banner-faq ul p a{
+        @apply underline;
+    }
+    .help-banner-faq ul li a{
+        @apply text-[1.2rem] hover:text-dark underline ;
+    }
+    .help-banner-faq ul li i{
+        @apply  mr-[.5rem] py-[.3rem] px-[.4rem] text-[.8rem] text-light rounded-full  bg-primary;
+    } */
+
+    @layer components{
+    .faq .container{
+        @apply max-w-[70rem];
+    }
+    .faq-wrapper{
+        @apply lg:grid lg:grid-cols-[1.5fr,2.5fr] items-start;
+    }
+    .faq-tab{
+        @apply hidden lg:block;
+    }
+    .faq-question{
+        @apply py-[2rem] border-b-[1px]
+    }
+    .faq-question:first-child{
+        @apply pb-[2rem]
+    }
+    .faq-question h4{
+        @apply flex items-center justify-between;
+    }
+    .faq-question h4 i{
+        @apply transition ease-in-out duration-[.5s];
+    }
+    .faq-question h4 i.open{
+        @apply transform rotate-[180deg];
+    }
+    .faq-tab-content-answer{
+        @apply max-h-[0rem] overflow-hidden transition-all;
+    }
+    .faq-tab-content-answer.open{
+        @apply max-h-[50rem] transition-all;
+        
+    }
+    .faq-nav li{
+        @apply p-[1rem] max-w-[15rem];
+    }
+    .faq-nav li.active{
+        @apply bg-primary rounded-xl;
+    }
+    .faq-tab-content{
+        @apply hidden;
+    }
+    .faq-tab-content.active{
+        @apply block
+    }
 }
