@@ -153,9 +153,9 @@
     }
 }
 
-
-     /* --------------------------LOBE HELP -------------------------------- */
-    /* .help-banner-content{
+/* --------------------------LOBE HELP -------------------------------- */
+@layer components{
+    .help-banner-content{
         @apply align-middle justify-center;
     }
     .help-main-text{
@@ -171,6 +171,9 @@
     .help-banner-heading p{
         @apply text-[1.2rem] font-normal text-center text-gray-500 w-[24rem] mx-auto lg:text-[2rem] lg:text-black lg:w-[45rem];
     }
+
+}
+    /* 
     .help-banner-faq {
         @apply border-b-[1px] border-grey;
     }
@@ -214,7 +217,16 @@
 
     @layer components{
     .faq .container{
-        @apply max-w-[70rem];
+        @apply max-w-[65rem];
+    }
+    .faq-nav:first-child{
+        @apply mb-[1rem];
+    }
+    .faq-nav li a{
+        @apply font-medium text-dark text-[1.2rem];
+    }
+    .faq-nav-link.active a{
+        @apply text-white
     }
     .faq-wrapper{
         @apply lg:grid lg:grid-cols-[1.5fr,2.5fr] items-start;
@@ -229,7 +241,7 @@
         @apply pb-[2rem]
     }
     .faq-question h4{
-        @apply flex items-center justify-between;
+        @apply flex items-center justify-between text-[1.2rem] text-dark font-medium
     }
     .faq-question h4 i{
         @apply transition ease-in-out duration-[.5s];
@@ -237,15 +249,66 @@
     .faq-question h4 i.open{
         @apply transform rotate-[180deg];
     }
+    .faq-question h3{
+        @apply py-[1rem] text-[1.2rem] text-dark font-medium;
+    }
+    .faq-ask{
+        @apply py-[2rem] border-b-[1px];
+    }
+    .faq-ask h2{
+        @apply text-[1.2rem] text-dark font-medium;
+    }
+    .faq-ask h2 span i{
+        @apply text-[1.5rem] mr-[1rem];
+    }
+    .faq-ask h2 span {
+        @apply items-center;
+    }
+    .faq-ask h2 a{
+        @apply flex items-center justify-between;
+    }
+    .faq-ask h2 a:first-child{
+        @apply flex items-center justify-between;
+    }
     .faq-tab-content-answer{
         @apply max-h-[0rem] overflow-hidden transition-all;
     }
+
+    .faq-tab-content-answer h5{
+        @apply pt-[1rem] text-[1.1rem] leading-6 text-dark;
+    }
+    .faq-tab-content-answer h5 span{
+        @apply font-bold;
+    }
+    .faq-tab-content-answer a{
+        @apply underline;
+    }
+
+    .faq-tab-content-answer ul li {
+        @apply py-[.8rem] text-[1.2rem] text-dark;
+    }
+    .faq-tab-content-answer ul li span{
+        @apply font-bold;
+    }
+    .faq-tab-content-answer p{
+        @apply py-[1rem] text-[1.2rem] italic;
+    }
+
+    .faq-tab-content-answer ul li i{
+        @apply mr-[.5rem] text-[1rem] text-primary;
+    }
+
+    .faq-tab-content-answer ul li i a{
+        @apply underline;
+    }
+
+
     .faq-tab-content-answer.open{
         @apply max-h-[50rem] transition-all;
         
     }
     .faq-nav li{
-        @apply p-[1rem] max-w-[15rem];
+        @apply p-[.8rem] max-w-[15rem];
     }
     .faq-nav li.active{
         @apply bg-primary rounded-xl;
@@ -257,3 +320,70 @@
         @apply block
     }
 }
+
+/* --------------------------LOBE EXAMPLES -------------------------------- */
+@layer components{
+    .examples-banner-content{
+        @apply align-middle justify-center;
+    }
+    .examples-main-text{
+        @apply flex font-bold text-[2.5rem] justify-center;
+    }
+
+    .examples-main-text h1{
+        @apply text-dark lg:text-[5rem] mr-[1rem];
+    }
+    .examples-main-text h2{
+        @apply text-center text-primary lg:text-[5rem];
+    }
+    .examples-banner-heading p{
+        @apply text-[1.2rem] font-normal text-center text-gray-500 w-[24rem] mx-auto lg:text-[2rem] lg:text-black lg:w-[45rem];
+    }
+}
+@layer components{
+    .cards{
+        @apply lg:grid lg:grid-cols-[1fr,1fr] mx-auto lg:px-[20rem];
+    }
+    .card-content{
+        @apply mx-auto max-w-[35rem] my-[2rem] shadow-2xl rounded-[2rem] bg-white;
+    }
+    .card-text{
+        @apply p-[2rem];
+    }
+    .card-text h2{
+        @apply text-[1.5rem] font-bold text-dark;
+    }
+    .card-text p{
+        @apply text-[1.5rem] text-dark;
+    }
+    .card-content video{
+        @apply rounded-t-[2rem];
+    }
+}
+
+/* --------------------------LOBE BLOG -------------------------------- */
+
+@layer components{
+    .blog-cards{
+        @apply lg:grid lg:grid-cols-[1fr,1fr] mx-auto lg:px-[20rem];
+    }
+    .blog-card-content{
+        @apply mx-auto max-w-[35rem] my-[2rem] shadow-2xl rounded-[2rem] bg-white hover:scale-105 transition-all duration-500 ease-in-out;
+    }
+    .blog-card-text{
+        @apply p-[2rem];
+    }
+    .blog-card-text h2{
+        @apply text-[1.2rem] font-bold text-dark;
+    }
+    .blog-card-text p{
+        @apply text-[1.2rem] text-dark mb-[3rem];
+    }
+    .blog-card-text h6{
+        @apply text-[1.2rem] text-gray-400 font-semibold;
+    }
+    .blog-card-content img{
+        @apply rounded-t-[2rem];
+    }
+}
+
